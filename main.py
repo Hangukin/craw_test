@@ -4,8 +4,10 @@ from dotenv import load_dotenv
 import subprocess
 import os
 
-import zeroclaw
-from zeroclaw import Client
+import asyncio
+
+from zeroclaw_tools import create_agent, shell, file_read, file_write
+from langchain_core.messages import HumanMessage
 
 load_dotenv()
 
@@ -13,8 +15,7 @@ token = os.getenv('DISCORD_TOKEN')
 model = os.getenv('ZEROCLAW_MODEL')
 gemini_key = os.getenv('GEMINI_API_KEY')
 
-# ZeroClaw 클라이언트 초기화 (데몬과 통신)
-client = ClawClient(api_key=token)
+
 # 1. 디스코드 봇 설정
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='!', intents=intents)
