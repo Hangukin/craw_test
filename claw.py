@@ -14,7 +14,7 @@ async def main():
         tools=[shell, file_read, file_write],
         model="gemini-flash-latest",
         api_key=gemini_key,
-        base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
+        base_url="https://generativelanguage.googleapis.com/v1/openai/"
     )
     
     # Execute a task
