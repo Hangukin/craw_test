@@ -12,7 +12,7 @@ async def main():
     # Create agent with tools
     agent = create_agent(
         tools=[shell, file_read, file_write],
-        model="gemini-1.5-flash",
+        model="gemini-flash-latest",
         api_key=gemini_key,
         base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
     )
