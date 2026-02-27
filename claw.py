@@ -1,9 +1,14 @@
 import asyncio
 import os
+from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage
 # zeroclaw에서 제공하는 도구들을 그대로 가져옵니다.
 from zeroclaw_tools import create_agent, shell, file_read, file_write
+
+
+load_dotenv()
+
 
 async def main():
     # 1. 환경 변수 확인
